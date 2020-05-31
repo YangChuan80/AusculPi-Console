@@ -62,7 +62,7 @@ def replay():
 # In[6]:
 
 
-def button_callback(channel):
+def button_callback():
     global frames, frames_numpy, filename_wav, filename_png, filename_np
     
     text_status.delete('1.0', tk.END)
@@ -162,23 +162,23 @@ root.geometry("{0}x{1}+0+0".format(root.winfo_screenwidth(), root.winfo_screenhe
 root.title('Auscul Pi -- A ear-contactless stethoscope')
 
 # Text Editor
-text_status = tk.Text(root, width=30, height=1, font=('tahoma', 30), bd=2, wrap='none')
-text_status.place(x=50, y=20)
+text_status = tk.Text(root, width=20, height=1, font=('tahoma', 26), bd=2, wrap='none')
+text_status.place(x=10, y=20)
 
 # Buttons
 
-button_auscultate = tk.Button(root, text="Auscultate", width=20, font=('tahoma', 30), 
+button_auscultate = tk.Button(root, text="Auscultate", width=10, font=('tahoma', 30), 
                          command=button_callback)
-button_auscultate.place(x=50, y=100)
+button_auscultate.place(x=10, y=100)
 
-button_replay = tk.Button(root, text="Replay", width=20, font=('tahoma', 30), command=replay)
-button_replay.place(x=50, y=200)
+button_replay = tk.Button(root, text="Replay", width=10, font=('tahoma', 30), command=replay)
+button_replay.place(x=10, y=180)
 
-button_about = tk.Button(root, text="About...", width=12, font=('tahoma', 30), command=about)
-button_about.place(x=600, y=100)
+button_about = tk.Button(root, text="About...", width=6, font=('tahoma', 20), command=about)
+button_about.place(x=300, y=100)
 
-button_exit = tk.Button(root, text="Exit", width=12, font=('tahoma', 30), command=root.destroy)
-button_exit.place(x=600, y=200)
+button_exit = tk.Button(root, text="Exit", width=6, font=('tahoma', 20), command=root.destroy)
+button_exit.place(x=300, y=180)
 
 
 root.mainloop()
