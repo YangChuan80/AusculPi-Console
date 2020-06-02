@@ -1,5 +1,5 @@
-# Willowbend DICOM
-A dialog-based DICOM-to-video converter.
+# Auscul Pi
+A Low-Cost Ear-Contactless Stethoscope Powered by Raspberry Pi and Python.
 
 ***Chuan Yang*** (<yangc@sj-hospital.org>)
 
@@ -7,7 +7,6 @@ A dialog-based DICOM-to-video converter.
 [![MIT license](https://img.shields.io/badge/license-MIT%20License-blue.svg)](LICENSE)
 [![Dowloads](https://img.shields.io/badge/downloads-43M-green.svg)](https://github.com/YangChuan80/WillowbendDICOM/raw/master/Installer/WillowbendDICOM_Installer.exe?raw=true)
 [![Medicine Application](https://img.shields.io/badge/application-medicine-red.svg)](README.md)
-[![DICOM](https://img.shields.io/badge/application-DICOM-yellow.svg)](README.md)
 [![Home](https://img.shields.io/badge/GitHub-home-ff69b4.svg)](https://github.com/YangChuan80)
 
 ## Introduction
