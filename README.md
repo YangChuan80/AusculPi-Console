@@ -10,31 +10,21 @@ A Low-Cost Ear-Contactless Stethoscope Powered by Raspberry Pi and Python.
 [![Home](https://img.shields.io/badge/GitHub-home-ff69b4.svg)](https://github.com/YangChuan80)
 
 ## Introduction
-**DICOM (Digital Imaging and Communications in Medicine)** is a standard for handling, storing, printing, and transmitting information in medical imaging. DICOM files can be exchanged between two entities that are capable of receiving image and patient data in DICOM format by following network communications protocol. DICOM has been widely adopted by hospitals and is making inroads in smaller applications like dentists' and doctors' offices.
+Since the outbreak of COVID-19, more and more physicians and nurses have been participating the battle to coronavirus at the first line treatment. Almost all patients in critical status were having pneumonia, respiratory failure and/or acute respiratory distress syndrome. So, auscultation was important for those patients to achieve accurate diagnosis, assessment of current severity and treatment efficacy. However, inside quarantine ward in hospitals, medical staff who were wearing protective clothing were unable to use conventional stethoscopes due to the head protective suit covering the regions of their ears. Auscultation examination was essential but hard to accomplished especially to the patients with poor respiratory conditions, such as severe pneumonia, respiratory dysfunction, intensive cases who were intubated and assisted with ventilators. Some experts have viewpoint suggesting less stethoscope and more ultrasound, while other experts stress the necessity of stethoscope and auscultation in COVID-19 treatment. 
 
-**Willowbend DICOM** is a dialog-based application performing the conversion from DICOM format to video format (avi) in order to meet the needs and requirements for universal computer systems (PC, Mac, Linux, etc.). So the ordinary users of such systems can use the converted file to present, communicate and store the universal files. 
+To challenge this paradox circumstance, we developed an electronic stethoscope using a credit card sized single-board computer (SBC), Raspberry Pi, connected to a chest piece of a conventional stethoscope and a tiny speaker, which can be easily modified by medical staff themselves. The software run by raspberry pi coded in python programming language was open source and has already been published on GitHub repository. All users who are interest in the stethoscope all around the world can assemble the components easily and download the software freely in a do-it-yourself (DIY) way. 
 
-Medical imaging related staffs (including Interventional Cardiologists, Physicians of Peripheral Intervention, Neurointerventional Physicians, Medical Imaging Physicians and Radiological Technicians) can use it in medical conferences, educations and remote consultants of clinical medicine, and they will feel free to use universal video formats in the slide presentations in medical courses and case reports. 
-
-Furthermore, besides efficiently converting a file from DICOM to AVI format, Willowbend DICOM can implement **auto grey-scale optimization** and customization for every frame in a DICOM before conversion, and it's able to extract patient's information rapidly from the DICOM files. 
-[![Auto Grey-scale Optimization](agso.png)](README.md)
-
-## Installation from Binaries
-- Download **[WillowbendDICOM_Enhanced 32-bit Installer.exe](https://github.com/YangChuan80/WillowbendDICOM/blob/master/Enhanced/installer/Willowbend%20Enhanced%2032-bit%20optFPS.exe?raw=true)** file from **[here](https://github.com/YangChuan80/WillowbendDICOM/blob/master/Enhanced/installer/Willowbend%20Enhanced%2032-bit%20optFPS.exe?raw=true)**, which is a NSIS installation file only used in Windows platform. 
-- After downloading, you can install it directly. When finished, a folder with the same name have been made. Enter the folder WillowbendDICOM, run the **WillowbendDICOM.EXE** to go!
-- This option is for ordinary users, who are not required to possess any knowledge of Python programming language or to have Python interpreter configured on their computers.
-- Willowbend DICOM can currently be installed on Windows 7 or later platform only.
 
 ## Installation from Source
 This option is only adopted by Python specialist. There are several dependencies necessarily preinstalled in your Python interpreter:
 
-- **SimpleITK**
+- **PyAudio**
 ```
- conda install --channel https://conda.anaconda.org/SimpleITK SimpleITK
+$ sudo apt install python3-pyaudio
  ```
-Also,
+Else if you are running python 2.7
 ```
-pip install simpleitk
+$ sudo apt install python-pyaudio 
 ```
 
 - **Pydicom** 1.0
