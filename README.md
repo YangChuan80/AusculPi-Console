@@ -8,8 +8,8 @@ Since the outbreak of COVID-19, more and more physicians and nurses have been pa
 
 To challenge this paradox circumstance, we developed an electronic stethoscope using a credit card sized single-board computer (SBC), Raspberry Pi, connected to a chest piece of a conventional stethoscope and a tiny speaker, which can be easily modified by medical staff themselves. The software run by raspberry pi coded in python programming language was open source and has already been published on GitHub repository. All users who are interest in the stethoscope all around the world can assemble the components easily and download the software freely in a do-it-yourself (DIY) way. 
 
-
-## Install the Audio (Essential!!!)
+## Prerequisites
+### Install the Audio (Essential!!!)
 This option is only adopted by Python specialist. There are several dependencies necessarily preinstalled in your Python interpreter:
 
 - **PyAudio**
@@ -28,7 +28,7 @@ $ sudo rasp-config
 ```
 Select "Advanced Options", then select "Audio", press Enter. After that select "Finish".
 
-## Test and Regulate the audio settings
+### Test and Regulate the audio settings
 
 - Check the hardware of record and play configuration:
 The record function:
@@ -61,6 +61,29 @@ Microphone:
 $ arecord --format=S16_LE --duration=5 --rate=16000 --file-type=raw sample.wav
 aplay --format=S16_LE --rate=16000 sample.wav
 ```
+### Touch screen installation
+- Change HDMI to Touch Screen:
+Copy and paste the following lines to terminal:
+```
+sudo rm -rf LCD-show 
+
+git clone https://github.com/goodtft/LCD-show.git 
+
+chmod -R 755 LCD-show 
+
+cd LCD-show/
+
+sudo ./LCD35-show
+```
+- Back to HDMI display mode:
+If you want to change Touch Screen back to HDMI display model, paste the following:
+```
+chmod -R 755 LCD-show 
+
+cd LCD-show/ 
+
+sudo ./LCD-hdmi
+```
 
 ## License
 The MIT License (MIT)
@@ -86,4 +109,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ## Contributor List
-- **Zhixuan Pang**, High-school Student., Sewickley Academy 
+- **Zhixuan Pang**, High-school Student, Sewickley Academy 
