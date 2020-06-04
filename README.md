@@ -3,11 +3,6 @@ A Low-Cost Ear-Contactless Stethoscope Powered by Raspberry Pi and Python.
 
 ***Chuan Yang*** (<yangc@sj-hospital.org>)
 
-[![MIT license](https://img.shields.io/badge/license-MIT%20License-blue.svg)](LICENSE)
-[![Dowloads](https://img.shields.io/badge/downloads-43M-green.svg)](https://github.com/YangChuan80/WillowbendDICOM/raw/master/Installer/WillowbendDICOM_Installer.exe?raw=true)
-[![Medicine Application](https://img.shields.io/badge/application-medicine-red.svg)](README.md)
-[![Home](https://img.shields.io/badge/GitHub-home-ff69b4.svg)](https://github.com/YangChuan80)
-
 ## Introduction
 Since the outbreak of COVID-19, more and more physicians and nurses have been participating the battle to coronavirus at the first line treatment. Almost all patients in critical status were having pneumonia, respiratory failure and/or acute respiratory distress syndrome. So, auscultation was important for those patients to achieve accurate diagnosis, assessment of current severity and treatment efficacy. However, inside quarantine ward in hospitals, medical staff who were wearing protective clothing were unable to use conventional stethoscopes due to the head protective suit covering the regions of their ears. Auscultation examination was essential but hard to accomplished especially to the patients with poor respiratory conditions, such as severe pneumonia, respiratory dysfunction, intensive cases who were intubated and assisted with ventilators. Some experts have viewpoint suggesting less stethoscope and more ultrasound, while other experts stress the necessity of stethoscope and auscultation in COVID-19 treatment. 
 
@@ -27,11 +22,11 @@ $ sudo apt install python-pyaudio
 ```
 
 - Config the audio settings of Raspberry Pi
- - Type the following command:
+ -- Type the following command:
 ```
 $ sudo rasp-config
 ```
- - Select "Advanced Options", then select "Audio", press Enter. After that select "Finish".
+ -- Select "Advanced Options", then select "Audio", press Enter. After that select "Finish".
 
 ## Test and Regulate the audio settings
 
