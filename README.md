@@ -1,4 +1,4 @@
-# Auscul Pi
+# Auscul Pi Console
 A Low-Cost Ear-Contactless Stethoscope Powered by Raspberry Pi and Python.
 
 ***Chuan Yang*** (<yangc@sj-hospital.org>)
@@ -22,39 +22,39 @@ $ sudo apt install python-pyaudio
 ```
 
 - Config the audio settings of Raspberry Pi
- -- Type the following command:
+Type the following command:
 ```
 $ sudo rasp-config
 ```
- -- Select "Advanced Options", then select "Audio", press Enter. After that select "Finish".
+Select "Advanced Options", then select "Audio", press Enter. After that select "Finish".
 
 ## Test and Regulate the audio settings
 
 - Check the hardware of record and play configuration:
- - The record function:
+The record function:
 ```
 $ arecord -l
 ```
- - The play function:
+The play function:
 ```
 $ aplay -l
 ```
  - find the card # and device #
- - For instance, the record is card 1 and device 0, and play is card 0 and device 0:
+For instance, the record is card 1 and device 0, and play is card 0 and device 0:
 
 - Adjust the volume:
- - Use this command to adjust volume of microphone and speaker
+Use this command to adjust volume of microphone and speaker
 ```
 $ alsamixer
 ```
  - Press F4 or F6 to select the volume
 
 - Test the audio:
- - Speaker:
+Speaker:
  ```
 $ speaker-test –t wav
 ```
- - Microphone:
+Microphone:
 ```
 $ arecord --format=S16_LE --duration=5 --rate=16000 --file-type=raw sample.wav
 aplay --format=S16_LE --rate=16000 sample.wav
