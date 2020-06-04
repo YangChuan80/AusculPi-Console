@@ -3,7 +3,6 @@ A Low-Cost Ear-Contactless Stethoscope Powered by Raspberry Pi and Python.
 
 ***Chuan Yang*** (<yangc@sj-hospital.org>)
 
-[![Windows Build status](https://img.shields.io/badge/Windows-passing-brightgreen.svg)](https://github.com/YangChuan80/WillowbendDICOM)
 [![MIT license](https://img.shields.io/badge/license-MIT%20License-blue.svg)](LICENSE)
 [![Dowloads](https://img.shields.io/badge/downloads-43M-green.svg)](https://github.com/YangChuan80/WillowbendDICOM/raw/master/Installer/WillowbendDICOM_Installer.exe?raw=true)
 [![Medicine Application](https://img.shields.io/badge/application-medicine-red.svg)](README.md)
@@ -15,7 +14,7 @@ Since the outbreak of COVID-19, more and more physicians and nurses have been pa
 To challenge this paradox circumstance, we developed an electronic stethoscope using a credit card sized single-board computer (SBC), Raspberry Pi, connected to a chest piece of a conventional stethoscope and a tiny speaker, which can be easily modified by medical staff themselves. The software run by raspberry pi coded in python programming language was open source and has already been published on GitHub repository. All users who are interest in the stethoscope all around the world can assemble the components easily and download the software freely in a do-it-yourself (DIY) way. 
 
 
-## Installation from Source
+## Install the Audio (Essential!!!)
 This option is only adopted by Python specialist. There are several dependencies necessarily preinstalled in your Python interpreter:
 
 - **PyAudio**
@@ -27,42 +26,49 @@ Else if you are running python 2.7
 $ sudo apt install python-pyaudio 
 ```
 
-- **Pydicom** 1.0
- - Download pydicom source from [https://github.com/darcymason/pydicom](https://github.com/darcymason/pydicom)
- - Of course, also:
+- Config the audio settings of Raspberry Pi
+ - Type the following command:
 ```
-pip install pydicom
+$ sudo rasp-config
 ```
+ - Select "Advanced Options", then select "Audio", press Enter. After that select "Finish".
 
-- **OpenCV**
- - The opencv should be the the latest version:
-```
-pip install opencv-python -U
-```
-After you complete the WillowbendDICOM.py file download, run it:
-```
-python WillowbendDICOM.py
-```
-Python interpreter have to be Python 3.4 or later.
+## Test and Regulate the audio settings
 
-- **Setuptools & Pyinstaler**
- - If you'd like to use **PyInstaller**, you should downgrade your **setuptools** module to **19.2**.
-
-To perform frozen binary, do this:
+- Check the hardware of record and play configuration:
+ - The record function:
 ```
-pyinstaller WillowbendDICOM.py -w
+$ arecord -l
 ```
+ - The play function:
+```
+$ aplay -l
+```
+ - find the card # and device #
+ - For instance, the record is card 1 and device 0, and play is card 0 and device 0:
 
-## Instructions
-- Click **Browse** button to choose the DICOM file(s). 
-- Load this chosen file. Don't forget to press **Load** button. When file successfully loaded, a information dialog will pop up to notice you. 
-- Click **Convert** button on the right to convert the currently loaded DICOM file to AVI file. During this session, you will be asked to specify the location you're going to output to. Click **OK**. You'll wait for about a second, and your AVI file is ready! Congratulations!
-- Optionally, you can customize the value of the **Clip Limit** if you're not satisfied with your converted AVI file with the default value of 3.0. The higher value means the more contrast effect in the video file you'll get. 
+- Adjust the volume:
+ - Use this command to adjust volume of microphone and speaker
+```
+$ alsamixer
+```
+ - Press F4 or F6 to select the volume
+
+- Test the audio:
+ - Speaker:
+ ```
+$ speaker-test –t wav
+```
+ - Microphone:
+```
+$ arecord --format=S16_LE --duration=5 --rate=16000 --file-type=raw sample.wav
+aplay --format=S16_LE --rate=16000 sample.wav
+```
 
 ## License
 The MIT License (MIT)
 
-Copyright (c) 2019 Chuan Yang
+Copyright (c) 2020 Chuan Yang
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -83,4 +89,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ## Contributor List
-- [@wenzhexue](http://github.com/wenzhexue) (**Wenzhe Xue**, Ph.D., Mayo Clinic) 
+- **Zhixuan Pang**, High-school Student., Sewickley Academy 
