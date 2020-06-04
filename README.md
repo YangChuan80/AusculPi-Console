@@ -42,14 +42,16 @@ $ aplay -l
 Find the card # and device #
 For instance, the record is card 1 and device 0, and play is card 0 and device 0:
 
-Adjust the volume:
+- Adjust the volume:
+
 Use this command to adjust volume of microphone and speaker
 ```
 $ alsamixer
 ```
 Press F4 or F6 to select the volume
 
-Test the audio:
+- Test the audio:
+
 Speaker:
  ```
 $ speaker-test –t wav
