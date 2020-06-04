@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 import pyaudio
 
 import numpy as np
@@ -12,25 +6,11 @@ import wave
 import os
 import datetime
 
-import RPi.GPIO as GPIO # Import Raspberry Pi GPIO library
-
 import matplotlib.pyplot as plt
 
 import tkinter as tk
 from tkinter import messagebox
 
-
-# In[ ]:
-
-
-'''
-GPIO.setwarnings(False) # Ignore warning for now
-GPIO.setmode(GPIO.BOARD) # Use physical pin numbering
-GPIO.setup(10, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # Set pin 10 to be an input pin and set initial value to be pulled low (off)
-'''
-
-
-# In[ ]:
 
 
 #The following code comes from markjay4k as referenced below
@@ -42,9 +22,6 @@ chans = 1
 
 record_secs = 30     #record time
 dev_index = 2
-
-
-# In[ ]:
 
 
 def about():
@@ -87,17 +64,9 @@ def about():
 
     about_root.mainloop()
 
-
-# In[ ]:
-
-
 def replay():
     #plays the audio file
     os.system("aplay " + filename_wav)    
-
-
-# In[ ]:
-
 
 def button_callback():
     global frames, frames_numpy, filename_wav, filename_png, filename_np  
@@ -108,8 +77,7 @@ def button_callback():
     filename_np = 'Array_File_' + str(now)[:10] + now.strftime("_%H_%M_%S")
     wav_output_filename = filename_wav
     png_output_filename = filename_png
-    np_output_filename = filename_np
-    
+    np_output_filename = filename_np    
 
     p = pyaudio.PyAudio()
 
@@ -160,33 +128,8 @@ def button_callback():
     wavefile.setframerate(samp_rate)
     wavefile.writeframes(b''.join(frames))
     wavefile.close()
-
-    #plays the audio file
-    #os.system("aplay " + filename_wav)    
-    
-    # Export the plot:
-    '''
-    fig = plt.figure()
-    s = fig.add_subplot(111)
-    s.plot(frames_numpy)
-    fig.savefig(png_output_filename, dpi=200)
-    '''
+  
     np.save(np_output_filename, frames_numpy)
-
-
-# In[ ]:
-
-
-'''
-GPIO.add_event_detect(10,GPIO.RISING,callback=button_callback) # Setup event on pin 10 rising edge
-
-
-message = input("Press enter to quit\n\n") # Run until someone presses enter
-GPIO.cleanup() # Clean up
-'''
-
-
-# In[ ]:
 
 
 root = tk.Tk()
@@ -200,7 +143,6 @@ text_status = tk.Text(root, width=20, height=1, font=('tahoma', 26), bd=2, wrap=
 text_status.place(x=10, y=20)
 
 # Buttons
-
 button_auscultate = tk.Button(root, text="Auscultate", width=10, font=('tahoma', 30), 
                          command=button_callback)
 button_auscultate.place(x=10, y=100)
@@ -214,6 +156,4 @@ button_about.place(x=300, y=100)
 button_exit = tk.Button(root, text="Exit", width=6, font=('tahoma', 20), command=root.destroy)
 button_exit.place(x=300, y=180)
 
-
 root.mainloop()
-
