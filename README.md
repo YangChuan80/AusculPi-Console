@@ -84,13 +84,25 @@ cd LCD-show/
 
 sudo ./LCD-hdmi
 ```
+
 ### PyInstaller
 For the GUI application, we'd better use mouse-click to open the application. Run this:
 ```
 pip3 install pyinstaller
 ```
 
-### 
+### Launch the application from desktop
+Create a new file called *AusculPiConsole.desktop*. Attention, the extesion of the file is .desktop! The content is as below:
+```
+[Desktop Entry]
+Name=Auscul Pi Console
+Comment= Application for LCECS
+Icon=
+Exec=/home/pi/Documents/Code/AusculPi/AusculPiConsole/AusculPiConsole
+Type=Application
+Encoding=UTF-8
+Terminal=false
+```
 
 ## License
 The MIT License (MIT)
