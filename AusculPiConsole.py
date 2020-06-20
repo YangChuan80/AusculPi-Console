@@ -6,7 +6,7 @@ import wave
 import os
 import datetime
 
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 import tkinter as tk
 from tkinter import messagebox
@@ -72,9 +72,9 @@ def button_callback():
     global frames, frames_numpy, filename_wav, filename_png, filename_np  
 
     now = datetime.datetime.now()
-    filename_wav = 'Wave_File_' + str(now)[:10] + now.strftime("_%H_%M_%S.wav")
-    filename_png = 'Chart_File_' + str(now)[:10] + now.strftime("_%H_%M_%S.png")
-    filename_np = 'Numpy_Array_File_' + str(now)[:10] + now.strftime("_%H_%M_%S")
+    filename_wav = 'AudioData//Wave_File_' + str(now)[:10] + now.strftime("_%H_%M_%S.wav")
+    filename_png = 'AudioData//Chart_File_' + str(now)[:10] + now.strftime("_%H_%M_%S.png")
+    filename_np = 'AudioData//Numpy_Array_File_' + str(now)[:10] + now.strftime("_%H_%M_%S")
     wav_output_filename = filename_wav
     png_output_filename = filename_png
     np_output_filename = filename_np    
