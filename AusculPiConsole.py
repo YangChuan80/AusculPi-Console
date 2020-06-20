@@ -11,8 +11,6 @@ import datetime
 import tkinter as tk
 from tkinter import messagebox
 
-
-
 #The following code comes from markjay4k as referenced below
 chunk = 512
 samp_rate = 44100
@@ -22,7 +20,6 @@ chans = 1
 
 record_secs = 30     #record time
 dev_index = 2
-
 
 def about():
     about_root=tk.Tk()
@@ -56,8 +53,7 @@ def about():
     label_institution.place(x=45,y=110)
     
     label_author=tk.Label(about_root,text='License: The MIT License (MIT)', font=('tahoma', 9))
-    label_author.place(x=90,y=140)
-   
+    label_author.place(x=90,y=140)   
 
     button_OK=tk.Button(about_root, width=15, text='OK', command=about_root.destroy)
     button_OK.place(x=105, y=180)
@@ -66,19 +62,17 @@ def about():
 
 def replay():
     #plays the audio file
-    os.system("aplay " + filename_wav)    
+    os.system("aplay " + wav_output_filename)    
 
 def button_callback():
-    global frames, frames_numpy, filename_wav, filename_png, filename_np  
+    global frames, frames_numpy, wav_output_filename, np_output_filename  
+
+    pathBase = '//home//pi//Documents//Code//AusculPi//AusculPiConsole//AudioData//'
 
     now = datetime.datetime.now()
-    filename_wav = 'AudioData//Wave_File_' + str(now)[:10] + now.strftime("_%H_%M_%S.wav")
-    filename_png = 'AudioData//Chart_File_' + str(now)[:10] + now.strftime("_%H_%M_%S.png")
-    filename_np = 'AudioData//Numpy_Array_File_' + str(now)[:10] + now.strftime("_%H_%M_%S")
-    wav_output_filename = filename_wav
-    png_output_filename = filename_png
-    np_output_filename = filename_np    
-
+    wav_output_filename = 'Wave_File_' + str(now)[:10] + now.strftime("_%H_%M_%S.wav")    
+    np_output_filename = 'Numpy_Array_File_' + str(now)[:10] + now.strftime("_%H_%M_%S")
+    
     p = pyaudio.PyAudio()
 
     #setup audio input stream
@@ -130,7 +124,6 @@ def button_callback():
     wavefile.close()
   
     np.save(np_output_filename, frames_numpy)
-
 
 root = tk.Tk()
 
