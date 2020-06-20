@@ -74,7 +74,7 @@ def button_callback():
     now = datetime.datetime.now()
     filename_wav = 'Wave_File_' + str(now)[:10] + now.strftime("_%H_%M_%S.wav")
     filename_png = 'Chart_File_' + str(now)[:10] + now.strftime("_%H_%M_%S.png")
-    filename_np = 'Array_File_' + str(now)[:10] + now.strftime("_%H_%M_%S")
+    filename_np = 'Numpy_Array_File_' + str(now)[:10] + now.strftime("_%H_%M_%S")
     wav_output_filename = filename_wav
     png_output_filename = filename_png
     np_output_filename = filename_np    
