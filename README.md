@@ -84,6 +84,13 @@ cd LCD-show/
 
 sudo ./LCD-hdmi
 ```
+### PyInstaller
+For the GUI application, we'd better use mouse-click to open the application. Run this:
+```
+pip3 install pyinstaller
+```
+
+### 
 
 ## License
 The MIT License (MIT)

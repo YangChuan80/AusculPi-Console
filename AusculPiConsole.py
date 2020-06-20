@@ -67,11 +67,11 @@ def replay():
 def button_callback():
     global frames, frames_numpy, wav_output_filename, np_output_filename  
 
-    pathBase = '//home//pi//Documents//Code//AusculPi//AusculPiConsole//AudioData//'
+    pathBase = '//home//pi//Desktop//AudioData//'
 
     now = datetime.datetime.now()
-    wav_output_filename = 'Wave_File_' + str(now)[:10] + now.strftime("_%H_%M_%S.wav")    
-    np_output_filename = 'Numpy_Array_File_' + str(now)[:10] + now.strftime("_%H_%M_%S")
+    wav_output_filename = pathBase + 'Wave_File_' + str(now)[:10] + now.strftime("_%H_%M_%S.wav")    
+    np_output_filename = pathBase + 'Numpy_Array_File_' + str(now)[:10] + now.strftime("_%H_%M_%S")
     
     p = pyaudio.PyAudio()
 

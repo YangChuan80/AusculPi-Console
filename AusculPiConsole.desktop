@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Auscul Pi Console
+Comment= Application for LCECS
+Icon=
+Exec=/home/pi/Documents/Code/AusculPi/AusculPiConsole/AusculPiConsole
+Type=Application
+Encoding=UTF-8
+Terminal=false
