@@ -24,7 +24,7 @@ $ sudo apt install python-pyaudio
 - Config the audio settings of Raspberry Pi
 Type the following command:
 ```
-$ sudo rasp-config
+$ sudo raspi-config
 ```
 Select "Advanced Options", then select "Audio", press Enter. After that select "Finish".
 
