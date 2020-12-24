@@ -9,6 +9,8 @@ Since the outbreak of COVID-19, more and more physicians and nurses have been pa
 To challenge this paradox circumstance, we developed an electronic stethoscope using a credit card sized single-board computer (SBC), Raspberry Pi, connected to a chest piece of a conventional stethoscope and a tiny speaker, which can be easily modified by medical staff themselves. The software run by raspberry pi coded in python programming language was open source and has already been published on GitHub repository. All users who are interest in the stethoscope all around the world can assemble the components easily and download the software freely in a do-it-yourself (DIY) way. 
 [![Graphic User's Interface of Auscul Pi Console](GUI_TouchScreen.png)](README.md)
 
+The graphic user interface (GUI) of the touch screen displayed by Auscul Pi. A. The desktop display after startup. The users can double touch the Auscul Pi icon to run the program. The recorded data will be stored in the folder AudioData. B. The manipulation interface of Auscul Pi Console after double touch the Auscul Pi Console icon. You can control the auscultation and replay by touching the “Auscultate” and “Replay” buttons with your fingertip.
+
 ## Prerequisites
 ### Install the Audio (Essential!!!)
 This option is only adopted by Python specialist. There are several dependencies necessarily preinstalled in your Python interpreter:
